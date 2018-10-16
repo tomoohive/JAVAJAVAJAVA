@@ -21,7 +21,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.lang.StringBuilder;
 
 public class Kadai1{
 
@@ -94,7 +93,7 @@ public class Kadai1{
         String line;
 
         // カタカナ単語の結合をStringBuilderで行う
-        StringBuilder word = new StringBuilder();
+        StringBuffer word = new StringBuffer();
 
         // word変数の初期化
         word.setLength(0);
