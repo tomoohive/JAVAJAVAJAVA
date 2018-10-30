@@ -16,12 +16,13 @@ public class Kadai3{
     "******************************",
     "作成者：二葉知泰：183364",
     "日付：",
+    "入力パラメータ：",
     "クラス継承 対話型",
     "******************************"
   };
 
   // Print Header
-  public void myPrint(){
+  public void myPrint(int x, int y, int z){
     Date now = new Date();
     // To get Date
     Format fmt= DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.LONG); 
@@ -29,6 +30,7 @@ public class Kadai3{
       System.out.print(myName[i]);
       switch (i) {
         case 2: System.out.print(fmt.format(now)); break; //Date
+        case 3: System.out.printf("%d %d %d",x,y,z); break; //Input
       }
       System.out.print('\n');
     }
@@ -40,11 +42,11 @@ public class Kadai3{
       Kadai3 Header = new Kadai3();
       Scanner input = new Scanner( System.in ); // from terminal
 
-      Header.myPrint();
-
       int apple_number = Integer.parseInt(args[0]);
       int strawberry_number = Integer.parseInt(args[1]);
       int grapefruit_number = Integer.parseInt(args[2]);
+
+      Header.myPrint(apple_number, strawberry_number, grapefruit_number);
       
       // generate ArrayList to store Fruit
       ArrayList<Fruit> FruitList = new ArrayList<Fruit>();
@@ -75,7 +77,8 @@ public class Kadai3{
       grapefruit.putHowMany(apple_number);
       grapefruit.print();
       FruitList.add(grapefruit);
-
+      
+      // Calculate sum of vitaminC and price
       double vitaminC = 0.0;
       int price = 0;
       for (int i = 0 ; i < FruitList.size() ; i++){
@@ -84,10 +87,14 @@ public class Kadai3{
         vitaminC += number * tmp.getVitaminC();
         price += number * tmp.getPrice();
       }
+
+      // to show on console
       System.out.println();
       System.out.printf("ビタミンＣ総量： %6.3f (mg)\n", vitaminC);
       System.out.printf("値段： %d (円)\n", price);
       System.out.println();
+
+     // error message
     } else {
       System.out.println("果物の数値を3つ入力してください");
     }
