@@ -57,10 +57,12 @@ public class Kadai4 {
     ArrayList<Shape2D> list = new ArrayList<Shape2D>();
     // call abstract base class
     Shape2D shape = null;
+    // variable of total area
     double total_area = 0;
+    // variable of total length
     double total_length = 0;
     Date date = new Date(); // initial random number
-    Random random = new Random(); // Random class
+    Random random = new Random(); // Random instance
     try {
       int n = Integer.valueOf(args[1]).intValue(); // total figure value
 
@@ -110,30 +112,34 @@ public class Kadai4 {
       for (int i=0; i<list.size(); i++){
         // what number?
         int count = i + 1;
-        cout.println("%% figure number: " + count );
+        cout.println("%% " + count + "番目の図形" );
         // using psPrint method of derive class
         list.get(i).psPrint(cout);
         total_area += list.get(i).area();
         total_length += list.get(i).perimeter();
       }
       cout.println( "showpage" );
-      cout.println( "%%Total area of ​​figure:" + total_area );
-      cout.println( "%%Total length of figure:" + total_length );
-      cout.println( "%%Total number of figure:" + n);
+      cout.println( "%%総面積 = " + total_area );
+      cout.println( "%%総長 = " + total_length );
+      cout.println( "%%図形総数 = " + n);
     }
     // various of error handling
+    // 1. miss number input
     catch (NumberFormatException e){
       System.err.println("Please give a integer between 10 and 50");
       System.exit(1);
     }
+    // 2. not found file
     catch (FileNotFoundException e){
       System.err.println("File not found: "+args[1]);
       System.exit(1);
     }
+    // 3. encoding is not suppoted
     catch (UnsupportedEncodingException e){
       System.err.println("UTF-8 code is not supported");
       System.exit(1);
     }
+    // 4. Unexpection
     catch (Exception e){
       System.err.println("Unexpected error");
       e.printStackTrace();

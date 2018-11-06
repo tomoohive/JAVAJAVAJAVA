@@ -35,7 +35,7 @@ public class Circle extends Shape2D{
   // function that draws the figure of a circle : override
   public void psPrint(PrintStream cout){
     // Set the name
-    setName("Circle");
+    setName("円");
     // Set the shape
     printHead(cout);
     // Set the color
@@ -43,6 +43,7 @@ public class Circle extends Shape2D{
     // Start drawing
     cout.println( "newpath" );
     cout.println(v.getX()+" "+v.getY()+" "+r+" 0 360 arc");
+    // finish
     cout.println( "stroke" );
   }
 }

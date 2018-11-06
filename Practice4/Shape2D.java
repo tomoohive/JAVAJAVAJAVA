@@ -27,8 +27,8 @@ public abstract class Shape2D{
   protected void setName(String name) { this.name = name; } 
   // PostScript Header
   void printHead(PrintStream cout){
-    cout.printf( "%% %s Area = %5.3f\n", getName(), area());
-    cout.printf( "%% %s Perimeter = %5.3f\n", getName(), perimeter());
+    cout.printf( "%% %s 面積 = %5.3f\n", getName(), area());
+    cout.printf( "%% %s 周囲長 = %5.3f\n", getName(), perimeter());
   }
 
   // calculate area : abstract

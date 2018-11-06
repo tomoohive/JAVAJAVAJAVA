@@ -68,16 +68,19 @@ public class Triangle extends Shape2D{
   // function that draws figure of a triangle : override
   public void psPrint(PrintStream cout){
     // Set the name
-    setName("Triangle");
+    setName("三角形");
     // Set the shape
     printHead(cout);
     // Set the color
     cout.println( getColor().getR()+" "+getColor().getG()+" "+getColor().getB()+" setrgbcolor" );
     // Start Drawing
     cout.println( "newpath" );
+    // Move to start point
     cout.println(v1.getX()+" "+v1.getY()+" moveto");
+    // Drawing line
     cout.println(v2.getX()+" "+v2.getY()+" lineto");
     cout.println(v3.getX()+" "+v3.getY()+" lineto");
+    // finish
     cout.println( "closepath" );
     cout.println( "stroke" );
   }

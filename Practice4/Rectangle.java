@@ -56,17 +56,20 @@ public class Rectangle extends Shape2D{
   // function that draws the figure of a rectanglr : override
   public void psPrint(PrintStream cout){
     // Set the name
-    setName("Rectangle");
+    setName("長方形");
     // Set the shape
     printHead(cout);
     // Set the color
     cout.println( getColor().getR()+" "+getColor().getG()+" "+getColor().getB()+" setrgbcolor" );
     // Start drawing
     cout.println( "newpath" );
+    // Move to start point
     cout.println(v1.getX()+" "+v1.getY()+" moveto");
+    // drawing line
     cout.println(v2.getX()+" "+v1.getY()+" lineto");
     cout.println(v2.getX()+" "+v2.getY()+" lineto");
     cout.println(v1.getX()+" "+v2.getY()+" lineto");
+    // finish
     cout.println( "closepath" );
     cout.println( "stroke" );
   }
