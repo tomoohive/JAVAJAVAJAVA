@@ -23,7 +23,7 @@ public class Ball {
   public Ball(int i) {
     // get the random value
     Date date = new Date();
-    Random random = new Random();
+    Random random = new Random(date.getTime() * i);
 
     // set each value within the range
     this.r = random.nextDouble()*80;
